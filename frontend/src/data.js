@@ -7,8 +7,8 @@ const data = {
             image: '/images/p1.jpg',
             price: 18,
             rating: 4.5,
-            numReviews: 10,
-            descriptio: 'Increase your immunine system'
+            numReviews: 12,
+            description: 'Increase your immunine system'
         },
         {
             _id: '2',
@@ -16,9 +16,9 @@ const data = {
             category: 'Alimenti',
             image: '/images/p2.jpg',
             price: 18,
-            rating: 4.5,
-            numReviews: 10,
-            descriptio: 'Increase your immunine system'
+            rating: 3.5,
+            numReviews: 18,
+            description: 'Increase your immunine system'
         },
         {
             _id: '3',
@@ -28,7 +28,7 @@ const data = {
             price: 18,
             rating: 4.5,
             numReviews: 10,
-            descriptio: 'Increase your immunine system'
+            description: 'Increase your immunine system'
         },
         {
             _id: '4',
@@ -36,9 +36,9 @@ const data = {
             category: 'Alimenti',
             image: '/images/p2.jpg',
             price: 18,
-            rating: 5.0,
+            rating: 2.0,
             numReviews: 100,
-            descriptio: 'Increase your immunine system'
+            description: 'Increase your immunine system'
         },
         {
             _id: '5',
@@ -48,7 +48,7 @@ const data = {
             price: 18,
             rating: 3.0,
             numReviews: 18,
-            descriptio: 'Increase your immunine system'
+            description: 'Increase your immunine system'
         },
         {
             _id: '6',
@@ -58,7 +58,7 @@ const data = {
             price: 38,
             rating: 4.0,
             numReviews: 180,
-            descriptio: 'Increase your immunine system'
+            description: 'Increase your immunine system'
         },
 
     ],
