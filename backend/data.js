@@ -1,4 +1,6 @@
 const data = {
+
+
     products: [
         {
             _id: '1',
@@ -9,7 +11,7 @@ const data = {
             rating: 4.5,
             numReviews: 12,
             description: 'Increase your immunine system',
-            countInStock: 2
+            countInStock: 10
         },
         {
             _id: '2',
@@ -20,7 +22,7 @@ const data = {
             rating: 3.5,
             numReviews: 18,
             description: 'Increase your immunine system',
-            countInStock: 2
+            countInStock: 10
         },
         {
             _id: '3',
@@ -31,7 +33,7 @@ const data = {
             rating: 4.5,
             numReviews: 10,
             description: 'Increase your immunine system',
-            countInStock: 2
+            countInStock: 7
         },
         {
             _id: '4',
@@ -42,7 +44,7 @@ const data = {
             rating: 2.0,
             numReviews: 100,
             description: 'Increase your immunine system',
-            countInStock: 2
+            countInStock: 9
         },
         {
             _id: '5',
@@ -53,7 +55,7 @@ const data = {
             rating: 3.0,
             numReviews: 18,
             description: 'Increase your immunine system',
-            countInStock: 2
+            countInStock: 9
         },
         {
             _id: '6',
