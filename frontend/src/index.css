@@ -26,11 +26,12 @@ body{
   grid-template-columns: 1fr;
   grid-template-rows: 5rem 1fr 5rem;
   height: 100%;
+  background-image: url('./images/prova2.jpg');
 }
 header{
   grid-area: header;
-  background-color: burlywood;
-  color: #ffffff;
+  background-color: green;
+  color: #b68252;
   display: flex;
 }
 main{
@@ -39,26 +40,26 @@ main{
 }
 footer{
   grid-area: footer;
-  background-color: burlywood;
-  color: #ffffff;
+  background-color:green;
+  color: #b68252;
 }
 /* Common */
 h1{
   font-size: 1.8rem;
   padding: 1rem 0;
-  color: burlywood;
+  color: #b68252;
 }
 h2{
   font-size: 1.6rem;
   padding: 1rem 0;
-  color: rgb(104, 148, 95);
+  color: #531e09
 }
 
 a{
   text-decoration: none;
 }
 a:hover {
-  color: green
+  color: #b68252;
 }
 ul {
   padding: 0;
@@ -134,6 +135,7 @@ a.brand {
 
 .col-1{
   flex: 1 1 25rem;
+  
 }
 .col-2{
   flex: 2 1 50rem;
@@ -165,6 +167,7 @@ img.large {
   background-color: white;
   border-radius: 0.5rem;
   margin: 0.5rem;
+  background-image: url('./images/prova2.jpg');
 }
 .card-body {
   padding: 0.5rem;
@@ -211,4 +214,19 @@ img.large {
 .alert-danger{
   color: red;
   background-color: #ffe0e0;
+}
+
+/* Background components */
+
+.story {
+  /* The image used */
+  background-image: url(./images/prova1.jpg);
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

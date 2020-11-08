@@ -34,7 +34,6 @@ export default function CartScreen(props) {
         <div className="row top">
         <Button><Link to='/'>Ritorna agli acquisti</Link></Button>
         <div className="col-2">
-          <h1>Elementi nel carrello</h1>
           {cartItems.length === 0 ? (
             <MessageBox>
               Carrello vuoto. <Button><Link to="/">Continua gli acquisti</Link></Button>

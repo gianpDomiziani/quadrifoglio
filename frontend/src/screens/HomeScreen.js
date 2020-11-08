@@ -13,7 +13,7 @@ export default function HomeScreen() {
       dispatch(listProducts());
     }, [dispatch]);
   return (
-      <div>
+      <div className="row center">
           {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
@@ -25,6 +25,7 @@ export default function HomeScreen() {
           ))}
         </div>
       )}
+      <div><h1>Ciao</h1></div>
       </div>
   );
 }
