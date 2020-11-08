@@ -1,6 +1,7 @@
 import React , { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 import { detailsProduct } from '../actions/productActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
@@ -28,7 +29,7 @@ export default function ProductScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div>
-          <button className='button'><Link to="/">Torna ai prodotti</Link></button>
+          <Button><Link to="/">Torna ai prodotti</Link></Button>
           <div className="row top">
             <div className="col-2">
               <img
@@ -84,21 +85,22 @@ export default function ProductScreen(props) {
                           <div>
                             <select 
                             value={qty} 
-                            onChange={e => setQty(e.target.value)}>
+                            onChange={e => setQty(e.target.value)}
+                            >
                               {[...Array(product.countInStock).keys()].map( 
                                 x => (
-                                <option key={x+1} value={x+1}>
-                                  {x+1}
+                                <option key={x + 1} value={x + 1}>
+                                  {x + 1}
                                 </option>
-                                ))
-                              }
+                                )
+                              )}
                             </select>
                           </div>
                         </div>
                       </li>
                       <li>
                       <button 
-                      onclick={addToCartHandler} 
+                      onClick={addToCartHandler} 
                       className="primary block"
                       >
                         Aggiungi al carrello
