@@ -5,7 +5,6 @@
 /.pnp
 .pnp.js
 /backend/data.js
-/frontend/node_modules
 node_modules
 
 
