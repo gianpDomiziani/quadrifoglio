@@ -94,7 +94,7 @@ button:hover {
   border: 0.1rem #404040 solid;
 }
 button.primary {
-  background-color: #f0c040;
+  background-color: greenyellow;
 }
 button.block {
   width: 100%;
@@ -220,7 +220,7 @@ img.large {
 
 .story {
   /* The image used */
-  background-image: url(./images/prova1.jpg);
+  /*background-image: url(./images/prova1.jpg);*/
 
   /* Full height */
   height: 100%; 
@@ -229,4 +229,20 @@ img.large {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* Form */
+
+.form{
+  max-width: 60rem;
+  margin: 0 auto;
+}
+.form > div {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.form label {
+  margin: 1rem 0;
+  display: block;
 }
