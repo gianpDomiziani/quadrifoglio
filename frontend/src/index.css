@@ -94,11 +94,7 @@ button:hover {
   border: 0.1rem #404040 solid;
 }
 button.primary {
-<<<<<<< HEAD
   background-color: rgb(158, 255, 47);
-=======
-  background-color: #aef132;
->>>>>>> style-dev
 }
 button.block {
   width: 100%;
