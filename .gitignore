@@ -1,5 +1,9 @@
 # dependencies
 /package-lock.json
+<<<<<<< HEAD
+=======
+/package-lock.json
+>>>>>>> style-dev
 node_modules
 /frontend/node_modules
 .env
@@ -8,4 +12,8 @@ node_modules
 /coverage
 
 #production
+<<<<<<< HEAD
 build
+=======
+build
+>>>>>>> style-dev
