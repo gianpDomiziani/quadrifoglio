@@ -26,7 +26,6 @@ export default function HomeScreen() {
                   <Product key={product._id} product={product}></Product>
                 ))}
               </div>
-          ))
             </div>
           )}
     </div>
