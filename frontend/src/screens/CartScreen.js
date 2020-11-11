@@ -9,36 +9,36 @@ import Button from '@material-ui/core/Button';
 
 
 export default function CartScreen(props) {
-    const productId = props.match.params.id;
-    const qty = props.location.search
+  const productId = props.match.params.id;
+  const qty = props.location.search
     ? Number(props.location.search.split('=')[1])
     : 1;
-    const cart = useSelector(state => state.cart);
-    const { cartItems } = cart;
-    const dispatch = useDispatch();
-    useEffect(() => {
-        if(productId) {
-            dispatch(addToCart(productId, qty));
-        }
+  const cart = useSelector(state => state.cart);
+  const { cartItems } = cart;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (productId) {
+      dispatch(addToCart(productId, qty));
+    }
 
-    }, [dispatch, productId, qty])
-    const removeFromCartHandler = (id) => {
-        // delete action
-        dispatch(removeFromCart(id));
-    };
+  }, [dispatch, productId, qty])
+  const removeFromCartHandler = (id) => {
+    // delete action
+    dispatch(removeFromCart(id));
+  };
 
-    const checkoutHandler = () => (
-        props.history.push('/signin?redirect=shipping')
-    )
-    return (
-        <div className="row top">
-        <Button><Link to='/'>Ritorna agli acquisti</Link></Button>
-        <div className="col-2">
-          {cartItems.length === 0 ? (
-            <MessageBox>
-              Carrello vuoto. <Button><Link to="/">Continua gli acquisti</Link></Button>
-            </MessageBox>
-          ) : (
+  const checkoutHandler = () => (
+    props.history.push('/signin?redirect=shipping')
+  )
+  return (
+    <div className="row top">
+      <Button><Link to='/'>Ritorna agli acquisti</Link></Button>
+      <div className="col-2">
+        {cartItems.length === 0 ? (
+          <MessageBox>
+            Carrello vuoto. <Button><Link to="/">Continua gli acquisti</Link></Button>
+          </MessageBox>
+        ) : (
             <ul>
               {cartItems.map((item) => (
                 <li key={item.product}>
@@ -69,7 +69,6 @@ export default function CartScreen(props) {
                         ))}
                       </select>
                     </div>
-                    <div>€{item.price}</div>
                     <div>
                       <Button
                         onClick={() => removeFromCartHandler(item.product)}
@@ -82,29 +81,29 @@ export default function CartScreen(props) {
               ))}
             </ul>
           )}
-        </div>
-        <div className="col-1">
-          <div className="card card-body">
-            <ul>
-              <li>
-                <h2>
-                  Totale: ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : $
+      </div>
+      <div className="col-1">
+        <div className="card card-body">
+          <ul>
+            <li>
+              <h2>
+                Totale: ({cartItems.reduce((a, c) => a + c.qty, 0)} prodotti) : $
                   {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
-                </h2>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={checkoutHandler}
-                  className="primary block"
-                  disabled={cartItems.length === 0}
-                >
-                  Prosegui con l'acquisto
+              </h2>
+            </li>
+            <li>
+              <button
+                type="button"
+                onClick={checkoutHandler}
+                className="primary block"
+                disabled={cartItems.length === 0}
+              >
+                Prosegui con l'acquisto
                 </button>
-              </li>
-            </ul>
-          </div>
+            </li>
+          </ul>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu'
@@ -9,11 +9,19 @@ import HomeScreen from './screens/HomeScreen';
 import CartScreen from './screens/CartScreen';
 import StoryScreen from './screens/StoryScreen';
 import SigninScreen from './screens/signinScreen';
+import { signout } from './actions/userActions';
 
 
 function App() {
   const cart = useSelector(state => state.cart);
   const { cartItems } = cart;
+
+  const userSignin = useSelector((state) => state.userSignin)
+  const { userInfo } = userSignin
+  const dispatch = useDispatch();
+  const signoutHandler = () => {
+    dispatch(signout())
+  }
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -55,7 +63,24 @@ function App() {
                 )}
               </Link>
             </Button>
-            <Button><Link to="/signin">Sign In</Link></Button>
+            <Button>
+              {
+                userInfo ? (
+                  <div className="dropdown">
+                    <Link to="#">
+                      {userInfo.name} <i className="fa fa-caret-down"></i>{' '}
+                    </Link>
+                    <ul className="dropdown-content">
+                      <li>
+                        <Link to='#signout' onClick={signoutHandler}>Sign Out</Link>
+                      </li>
+                    </ul>
+                  </div>
+                ) : (
+                    <Link to="/signin">Sign In</Link>
+                  )
+              }
+            </Button>
           </div>
         </header>
         <main>
@@ -65,7 +90,7 @@ function App() {
           <Route path="/" component={HomeScreen} exact ></Route>
           <Route path="/storia" component={StoryScreen} exact></Route>
         </main>
-        <footer className='row center'>All right reserved</footer>
+        <footer className='row center'>Copyright © 2020 Bottega dei rimedi naturali, All rights reserved. </footer>
       </div>
     </BrowserRouter>
   );

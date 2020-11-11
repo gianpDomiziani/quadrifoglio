@@ -22,6 +22,7 @@ export default function HomeScreen() {
       ) : (
             <div className="row center">
               <div className="row center">
+                <h3>OFFERTE !!!</h3>
                 <HomeList products={products}></HomeList>
               </div>
               <div className="row center">

@@ -1,4 +1,4 @@
-import React , { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
@@ -28,92 +28,92 @@ export default function ProductScreen(props) {
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
-        <div>
-          <Button><Link to="/">Torna ai prodotti</Link></Button>
-          <div className="row top">
-            <div className="col-2">
-              <img
-                className="large"
-                src={product.image}
-                alt={product.name}
-              ></img>
-            </div>
-            <div className="col-1">
-              <ul>
-                <li>
-                  <h1>{product.name}</h1>
-                </li>
-                <li>
-                  <Rating
-                    rating={product.rating}
-                    numReviews={product.numReviews}
-                  ></Rating>
-                </li>
-                <li>Prezzo : ${product.price}</li>
-                <li>
-                  Descrizione:
+            <div>
+              <Button><Link to="/">Torna ai prodotti</Link></Button>
+              <div className="row top">
+                <div className="col-2">
+                  <img
+                    className="large"
+                    src={product.image}
+                    alt={product.name}
+                  ></img>
+                </div>
+                <div className="col-1">
+                  <ul>
+                    <li>
+                      <h1>{product.name}</h1>
+                    </li>
+                    <li>
+                      <Rating
+                        rating={product.rating}
+                        numReviews={product.numReviews}
+                      ></Rating>
+                    </li>
+                    <li>Prezzo : ${product.price}</li>
+                    <li>
+                      Descrizione:
                   <p>{product.description}</p>
-                </li>
-              </ul>
-            </div>
-            <div className="col-1">
-              <div className="card card-body">
-                <ul>
-                  <li>
-                    <div className="row">
-                      <div>Prezzo</div>
-                      <div className="price">${product.price}</div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="row">
-                      <div>Stato</div>
-                      <div>
-                        {product.countInStock > 0 ? (
-                          <span className="success">In Stock</span>
-                        ) : (
-                          <span className="danger">Non disponibile</span>
-                        )}
-                      </div>
-                    </div>
-                  </li>
-                  {product.countInStock > 0 && (
-                      <>
+                    </li>
+                  </ul>
+                </div>
+                <div className="col-1">
+                  <div className="card card-body">
+                    <ul>
                       <li>
                         <div className="row">
-                          <div>Qty</div>
-                          <div>
-                            <select 
-                            value={qty} 
-                            onChange={e => setQty(e.target.value)}
-                            >
-                              {[...Array(product.countInStock).keys()].map( 
-                                x => (
-                                <option key={x + 1} value={x + 1}>
-                                  {x + 1}
-                                </option>
-                                )
-                              )}
-                            </select>
-                          </div>
+                          <div>Prezzo</div>
+                          <div className="price">${product.price}</div>
                         </div>
                       </li>
                       <li>
-                      <button 
-                      onClick={addToCartHandler} 
-                      className="primary block"
-                      >
-                        Aggiungi al carrello
+                        <div className="row">
+                          <div>Stato</div>
+                          <div>
+                            {product.countInStock > 0 ? (
+                              <span className="success">In Stock</span>
+                            ) : (
+                                <span className="danger">Non disponibile</span>
+                              )}
+                          </div>
+                        </div>
+                      </li>
+                      {product.countInStock > 0 && (
+                        <>
+                          <li>
+                            <div className="row">
+                              <div>Qty</div>
+                              <div>
+                                <select
+                                  value={qty}
+                                  onChange={e => setQty(e.target.value)}
+                                >
+                                  {[...Array(product.countInStock).keys()].map(
+                                    x => (
+                                      <option key={x + 1} value={x + 1}>
+                                        {x + 1}
+                                      </option>
+                                    )
+                                  )}
+                                </select>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <button
+                              onClick={addToCartHandler}
+                              className="primary block"
+                            >
+                              Aggiungi al carrello
                       </button>
-                    </li>
-                    </>
-                    )}
-                </ul>
+                          </li>
+                        </>
+                      )}
+                    </ul>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
+          )}
     </div>
-    )}
-    </div>
-    );
+  );
 }
