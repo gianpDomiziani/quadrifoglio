@@ -202,7 +202,11 @@ img.large {
 }
 
 /* Alert */
-.success {
+
+.loading{
+  display: block !important;
+}
+.success{
   color: green;
 }
 .danger{
