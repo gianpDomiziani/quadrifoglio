@@ -12,6 +12,8 @@ import RegisterScreen from './screens/RegisterScreen';
 import SigninScreen from './screens/signinScreen';
 import { signout } from './actions/userActions';
 
+import SocialFollow from './components/SocialFollow';
+
 
 function App() {
   const cart = useSelector(state => state.cart);
@@ -92,8 +94,9 @@ function App() {
           <Route path="/" component={HomeScreen} exact ></Route>
           <Route path="/storia" component={StoryScreen} exact></Route>
         </main>
-        <footer className='row center'>Copyright © 2020 Bottega dei rimedi naturali, All rights reserved. </footer>
+        <SocialFollow />
       </div>
+
     </BrowserRouter>
   );
 }

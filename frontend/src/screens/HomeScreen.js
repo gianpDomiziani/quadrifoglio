@@ -3,6 +3,7 @@ import Product from '../components/Product';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import HomeList from '../components/HomeList';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 
@@ -25,6 +26,7 @@ export default function HomeScreen() {
                 <h3>OFFERTE !!!</h3>
                 <HomeList products={products}></HomeList>
               </div>
+              <h1>PRODOTTI</h1>
               <div className="row center">
                 {products.map((product) => (
                   <Product key={product._id} product={product}></Product>
