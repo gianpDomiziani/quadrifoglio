@@ -38,8 +38,7 @@ function App() {
         <header className="row">
           <div>
             <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-              Menù
-      </Button>
+              Menù</Button>
             <Menu
               id="simple-menu"
               anchorEl={anchorEl}
@@ -48,6 +47,7 @@ function App() {
               onClose={handleClose}
             >
               <MenuItem onClick={handleClose}><Link to='/salute'>Salute</Link></MenuItem>
+              <MenuItem onClick={handleClose}><Link to='/fitoterapici'>Fitoterapici</Link></MenuItem>
               <MenuItem onClick={handleClose}><Link to='/bellezza'>Bellezza</Link></MenuItem>
               <MenuItem onClick={handleClose}><Link to="/storia" exact>Chi sono?</Link></MenuItem>
             </Menu>
@@ -97,8 +97,9 @@ function App() {
         <SocialFollow />
       </div>
 
-    </BrowserRouter>
+    </BrowserRouter >
   );
 }
 
 export default App;
+

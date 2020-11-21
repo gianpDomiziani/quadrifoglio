@@ -20,7 +20,8 @@
     "express-async-handler": "^1.1.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.13",
-    "react-font-awesome": "^1.0.3"
+    "react-font-awesome": "^1.0.3",
+    "semantic-ui-react": "^2.0.1"
   },
   "devDependencies": {
     "eslint": "^7.12.1",

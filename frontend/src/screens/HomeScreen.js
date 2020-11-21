@@ -21,7 +21,15 @@ export default function HomeScreen() {
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
-            <div className="row center">
+            <div>
+              <div className="hero-image">
+                <div className="hero-text">
+                  <h1>
+                    Vitam regit fortuna, non sapientia.
+          Unus dies hominum eruditorum plus patet, quam imperiti longissima aetas.</h1>
+                  <h2>(Marco Tullio Cicerone)</h2>
+                </div>
+              </div>
               <div className="row center">
                 <h3>OFFERTE !!!</h3>
                 <HomeList products={products}></HomeList>
@@ -33,8 +41,9 @@ export default function HomeScreen() {
                 ))}
               </div>
             </div>
-          )}
-    </div>
+          )
+      }
+    </div >
   );
 }
 
